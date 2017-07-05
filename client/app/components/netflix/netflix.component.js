@@ -9,4 +9,5 @@ let NetflixComponent = {
   controller,
   controllerAs: 'NetflixController'
 };
+
 export default NetflixComponent;

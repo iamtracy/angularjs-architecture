@@ -1,7 +1,5 @@
-class headerController {
-    constructor() {
-      this.name = 'header';
-    }
-  }
+class HeaderController {
+  constructor() {}
+}
 
-  export default headerController;
+export default HeaderController;
