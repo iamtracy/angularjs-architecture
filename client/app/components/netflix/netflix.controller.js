@@ -10,7 +10,7 @@ class NetflixController {
   }
 
   onDelete(index) {
-    this.movies.value.splice(index, 1);
+    this.NetflixService.deleteItem(index);
   }
 
 }

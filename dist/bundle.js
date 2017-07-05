@@ -50,28 +50,26 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _angularjs = __webpack_require__(65);
+	var _angularjs = __webpack_require__(64);
 
 	var _angularjs2 = _interopRequireDefault(_angularjs);
 
-	__webpack_require__(97);
+	__webpack_require__(96);
 
-	var _app = __webpack_require__(103);
+	var _app = __webpack_require__(102);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _netflix = __webpack_require__(61);
-
-	var _netflix2 = _interopRequireDefault(_netflix);
-
-	var _components = __webpack_require__(104);
+	var _components = __webpack_require__(103);
 
 	var _components2 = _interopRequireDefault(_components);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_angular2.default.module('app', [_components2.default.name, _angularjs2.default, 'ngMaterial']).component('app', _app2.default).config(['$sceDelegateProvider', '$stateProvider', '$urlRouterProvider', function ($sceDelegateProvider, $stateProvider) {
+	_angular2.default.module('app', [_components2.default.name, _angularjs2.default, 'ngMaterial']).component('app', _app2.default).config(['$sceDelegateProvider', '$stateProvider', function ($sceDelegateProvider, $stateProvider) {
+
 	  $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://netflixroulette.net/**']);
+
 	  $stateProvider.state('list', {
 	    url: "/list",
 	    template: '<netflix></netflix>'
@@ -1068,17 +1066,17 @@
 	}
 	Object.defineProperty(exports, "__esModule", { value: true });
 	__export(__webpack_require__(13));
+	__export(__webpack_require__(81));
 	__export(__webpack_require__(82));
 	__export(__webpack_require__(83));
 	__export(__webpack_require__(84));
 	__export(__webpack_require__(85));
 	__export(__webpack_require__(86));
-	__export(__webpack_require__(87));
-	__export(__webpack_require__(91));
+	__export(__webpack_require__(90));
 	__export(__webpack_require__(36));
 	__export(__webpack_require__(41));
-	__export(__webpack_require__(88));
-	__export(__webpack_require__(81));
+	__export(__webpack_require__(87));
+	__export(__webpack_require__(80));
 	//# sourceMappingURL=index.js.map
 
 /***/ },
@@ -1482,7 +1480,7 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(98);
+	__webpack_require__(97);
 	module.exports = angular;
 
 
@@ -4384,10 +4382,10 @@
 	var angular_1 = __webpack_require__(10);
 	var core_1 = __webpack_require__(5);
 	var views_1 = __webpack_require__(27);
-	var templateFactory_1 = __webpack_require__(70);
+	var templateFactory_1 = __webpack_require__(69);
 	var stateProvider_1 = __webpack_require__(34);
-	var onEnterExitRetain_1 = __webpack_require__(69);
-	var locationServices_1 = __webpack_require__(67);
+	var onEnterExitRetain_1 = __webpack_require__(68);
+	var locationServices_1 = __webpack_require__(66);
 	var urlRouterProvider_1 = __webpack_require__(35);
 	angular_1.ng.module("ui.router.angular1", []);
 	var mod_init = angular_1.ng.module('ui.router.init', []);
@@ -5172,21 +5170,21 @@
 	var interface_1 = __webpack_require__(12);
 	var transition_1 = __webpack_require__(21);
 	var hookRegistry_1 = __webpack_require__(32);
-	var coreResolvables_1 = __webpack_require__(72);
-	var redirectTo_1 = __webpack_require__(76);
-	var onEnterExitRetain_1 = __webpack_require__(75);
-	var resolve_1 = __webpack_require__(77);
-	var views_1 = __webpack_require__(80);
-	var updateGlobals_1 = __webpack_require__(78);
-	var url_1 = __webpack_require__(79);
+	var coreResolvables_1 = __webpack_require__(71);
+	var redirectTo_1 = __webpack_require__(75);
+	var onEnterExitRetain_1 = __webpack_require__(74);
+	var resolve_1 = __webpack_require__(76);
+	var views_1 = __webpack_require__(79);
+	var updateGlobals_1 = __webpack_require__(77);
+	var url_1 = __webpack_require__(78);
 	var lazyLoad_1 = __webpack_require__(37);
 	var transitionEventType_1 = __webpack_require__(48);
 	var transitionHook_1 = __webpack_require__(16);
 	var predicates_1 = __webpack_require__(2);
 	var common_1 = __webpack_require__(1);
 	var hof_1 = __webpack_require__(3);
-	var ignoredTransition_1 = __webpack_require__(73);
-	var invalidTransition_1 = __webpack_require__(74);
+	var ignoredTransition_1 = __webpack_require__(72);
+	var invalidTransition_1 = __webpack_require__(73);
 	/**
 	 * The default [[Transition]] options.
 	 *
@@ -9058,37 +9056,6 @@
 
 /***/ },
 /* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _netflixComponent = __webpack_require__(117);
-
-	var _netflixComponent2 = _interopRequireDefault(_netflixComponent);
-
-	var _netflixController = __webpack_require__(111);
-
-	var _netflixController2 = _interopRequireDefault(_netflixController);
-
-	__webpack_require__(121);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var NetflixComponent = {
-	  restrict: 'E',
-	  bindings: {},
-	  template: _netflixComponent2.default,
-	  controller: _netflixController2.default,
-	  controllerAs: 'NetflixController'
-	};
-	exports.default = NetflixComponent;
-
-/***/ },
-/* 62 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -9101,18 +9068,18 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var ApiService = function () {
-	  ApiService.$inject = ["$http", "$q"];
-	  function ApiService($http, $q) {
+	var FirebaseService = function () {
+	  FirebaseService.$inject = ["$http", "$q"];
+	  function FirebaseService($http, $q) {
 	    'ngInject';
 
-	    _classCallCheck(this, ApiService);
+	    _classCallCheck(this, FirebaseService);
 
 	    this.$http = $http;
 	    this.$q = $q;
 	  }
 
-	  _createClass(ApiService, [{
+	  _createClass(FirebaseService, [{
 	    key: 'getData',
 	    value: function getData() {
 	      var defer = this.$q.defer();
@@ -9126,13 +9093,13 @@
 	    }
 	  }]);
 
-	  return ApiService;
+	  return FirebaseService;
 	}();
 
-	exports.default = ApiService;
+	exports.default = FirebaseService;
 
 /***/ },
-/* 63 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9708,7 +9675,7 @@
 	//# sourceMappingURL=stateDirectives.js.map
 
 /***/ },
-/* 64 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10003,7 +9970,7 @@
 	//# sourceMappingURL=viewDirective.js.map
 
 /***/ },
-/* 65 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10019,11 +9986,11 @@
 	__export(__webpack_require__(27));
 	__export(__webpack_require__(34));
 	__export(__webpack_require__(35));
-	__webpack_require__(66);
+	__webpack_require__(65);
+	__webpack_require__(62);
+	__webpack_require__(67);
 	__webpack_require__(63);
-	__webpack_require__(68);
-	__webpack_require__(64);
-	__webpack_require__(71);
+	__webpack_require__(70);
 	exports.default = "ui.router";
 	var core = __webpack_require__(5);
 	exports.core = core;
@@ -10031,7 +9998,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 66 */
+/* 65 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10404,7 +10371,7 @@
 	//# sourceMappingURL=injectables.js.map
 
 /***/ },
-/* 67 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10484,7 +10451,7 @@
 	//# sourceMappingURL=locationServices.js.map
 
 /***/ },
-/* 68 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10535,7 +10502,7 @@
 	//# sourceMappingURL=stateFilters.js.map
 
 /***/ },
-/* 69 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10565,7 +10532,7 @@
 	//# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ },
-/* 70 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10764,7 +10731,7 @@
 	//# sourceMappingURL=templateFactory.js.map
 
 /***/ },
-/* 71 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10792,7 +10759,7 @@
 	//# sourceMappingURL=viewScroll.js.map
 
 /***/ },
-/* 72 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10815,7 +10782,7 @@
 	//# sourceMappingURL=coreResolvables.js.map
 
 /***/ },
-/* 73 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10851,7 +10818,7 @@
 	//# sourceMappingURL=ignoredTransition.js.map
 
 /***/ },
-/* 74 */
+/* 73 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10875,7 +10842,7 @@
 	//# sourceMappingURL=invalidTransition.js.map
 
 /***/ },
-/* 75 */
+/* 74 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10937,7 +10904,7 @@
 	//# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ },
-/* 76 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10979,7 +10946,7 @@
 	//# sourceMappingURL=redirectTo.js.map
 
 /***/ },
-/* 77 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11027,7 +10994,7 @@
 	//# sourceMappingURL=resolve.js.map
 
 /***/ },
-/* 78 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11067,7 +11034,7 @@
 	//# sourceMappingURL=updateGlobals.js.map
 
 /***/ },
-/* 79 */
+/* 78 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11097,7 +11064,7 @@
 	//# sourceMappingURL=url.js.map
 
 /***/ },
-/* 80 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11149,7 +11116,7 @@
 	//# sourceMappingURL=views.js.map
 
 /***/ },
-/* 81 */
+/* 80 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11175,7 +11142,7 @@
 	//# sourceMappingURL=interface.js.map
 
 /***/ },
-/* 82 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11190,7 +11157,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 83 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11204,7 +11171,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 84 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11219,7 +11186,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 85 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11237,7 +11204,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 86 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11270,7 +11237,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 87 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11286,7 +11253,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 88 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11299,11 +11266,11 @@
 	 * @module vanilla
 	 */
 	/** */
-	__export(__webpack_require__(89));
+	__export(__webpack_require__(88));
 	//# sourceMappingURL=vanilla.js.map
 
 /***/ },
-/* 89 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11320,11 +11287,11 @@
 	__export(__webpack_require__(56));
 	__export(__webpack_require__(53));
 	__export(__webpack_require__(17));
-	__export(__webpack_require__(90));
+	__export(__webpack_require__(89));
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 90 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11358,7 +11325,7 @@
 	//# sourceMappingURL=plugins.js.map
 
 /***/ },
-/* 91 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11370,7 +11337,7 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ },
-/* 92 */
+/* 91 */
 /***/ function(module, exports) {
 
 	/**
@@ -15530,15 +15497,15 @@
 
 
 /***/ },
-/* 93 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(92);
+	__webpack_require__(91);
 	module.exports = 'ngAnimate';
 
 
 /***/ },
-/* 94 */
+/* 93 */
 /***/ function(module, exports) {
 
 	/**
@@ -15947,15 +15914,15 @@
 
 
 /***/ },
-/* 95 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(94);
+	__webpack_require__(93);
 	module.exports = 'ngAria';
 
 
 /***/ },
-/* 96 */
+/* 95 */
 /***/ function(module, exports) {
 
 	/*!
@@ -51965,25 +51932,25 @@
 	})(window, window.angular);;window.ngMaterial={version:{full: "1.1.4"}};
 
 /***/ },
-/* 97 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Should already be required, here for clarity
 	__webpack_require__(8);
 
 	// Load Angular and dependent libs
-	__webpack_require__(93);
-	__webpack_require__(95);
+	__webpack_require__(92);
+	__webpack_require__(94);
 
 	// Now load Angular Material
-	__webpack_require__(96);
+	__webpack_require__(95);
 
 	// Export namespace
 	module.exports = 'ngMaterial';
 
 
 /***/ },
-/* 98 */
+/* 97 */
 /***/ function(module, exports) {
 
 	/**
@@ -85819,13 +85786,12 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 99 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
 	// imports
 	exports.push([module.id, "@import url(https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css);", ""]);
-	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 	// module
@@ -85835,7 +85801,7 @@
 
 
 /***/ },
-/* 100 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -85849,7 +85815,7 @@
 
 
 /***/ },
-/* 101 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -85863,7 +85829,7 @@
 
 
 /***/ },
-/* 102 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(24)();
@@ -85877,7 +85843,7 @@
 
 
 /***/ },
-/* 103 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85901,7 +85867,7 @@
 	exports.default = AppComponent;
 
 /***/ },
-/* 104 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85914,7 +85880,7 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _list = __webpack_require__(110);
+	var _list = __webpack_require__(109);
 
 	var _list2 = _interopRequireDefault(_list);
 
@@ -85922,7 +85888,7 @@
 
 	var _netflix2 = _interopRequireDefault(_netflix);
 
-	var _header = __webpack_require__(107);
+	var _header = __webpack_require__(106);
 
 	var _header2 = _interopRequireDefault(_header);
 
@@ -85933,7 +85899,7 @@
 	exports.default = ComponentsModule;
 
 /***/ },
-/* 105 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85946,7 +85912,7 @@
 
 	var _headerComponent2 = _interopRequireDefault(_headerComponent);
 
-	var _headerController = __webpack_require__(106);
+	var _headerController = __webpack_require__(105);
 
 	var _headerController2 = _interopRequireDefault(_headerController);
 
@@ -85954,20 +85920,21 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var headerComponent = {
+	var HeaderComponent = {
 	  restrict: 'E',
 	  bindings: {},
 	  template: _headerComponent2.default,
 	  controller: _headerController2.default,
-	  controllerAs: 'headerController'
+	  controllerAs: 'HeaderController'
 	};
-	exports.default = headerComponent;
+
+	exports.default = HeaderComponent;
 
 /***/ },
-/* 106 */
+/* 105 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -85975,16 +85942,14 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var headerController = function headerController() {
-	  _classCallCheck(this, headerController);
-
-	  this.name = 'header';
+	var HeaderController = function HeaderController() {
+	  _classCallCheck(this, HeaderController);
 	};
 
-	exports.default = headerController;
+	exports.default = HeaderController;
 
 /***/ },
-/* 107 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -85997,17 +85962,18 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _header = __webpack_require__(105);
+	var _header = __webpack_require__(104);
 
 	var _header2 = _interopRequireDefault(_header);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var headerModule = _angular2.default.module('header', []).component('header', _header2.default);
-	exports.default = headerModule;
+	var HeaderModule = _angular2.default.module('header', []).component('header', _header2.default);
+
+	exports.default = HeaderModule;
 
 /***/ },
-/* 108 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86020,7 +85986,7 @@
 
 	var _listComponent2 = _interopRequireDefault(_listComponent);
 
-	var _listController = __webpack_require__(109);
+	var _listController = __webpack_require__(108);
 
 	var _listController2 = _interopRequireDefault(_listController);
 
@@ -86039,7 +86005,7 @@
 	exports.default = ListModule;
 
 /***/ },
-/* 109 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -86050,27 +86016,27 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _api = __webpack_require__(62);
+	var _firebase = __webpack_require__(61);
 
-	var _api2 = _interopRequireDefault(_api);
+	var _firebase2 = _interopRequireDefault(_firebase);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var ListController = function () {
-	  function ListController(ApiService) {
+	  function ListController(FirebaseService) {
 	    _classCallCheck(this, ListController);
 
 	    this.info = {};
 	    this.cards = [];
-	    this.ApiService = ApiService;
+	    this.FirebaseService = FirebaseService;
 	  }
 
 	  _createClass(ListController, [{
 	    key: "$onInit",
 	    value: function $onInit() {
-	      this.info = this.ApiService.getData().$$state;
+	      this.info = this.FirebaseService.getData().$$state;
 	    }
 	  }, {
 	    key: "onAddCard",
@@ -86087,12 +86053,12 @@
 	  return ListController;
 	}();
 
-	ListController.$inject = ["ApiService"];
+	ListController.$inject = ["FirebaseService"];
 
 	exports.default = ListController;
 
 /***/ },
-/* 110 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -86105,19 +86071,51 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _list = __webpack_require__(108);
+	var _firebase = __webpack_require__(61);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	var _list = __webpack_require__(107);
 
 	var _list2 = _interopRequireDefault(_list);
 
-	var _api = __webpack_require__(62);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _api2 = _interopRequireDefault(_api);
+	var ListModule = _angular2.default.module('list', []).component('list', _list2.default).service("FirebaseService", _firebase2.default);
+
+	exports.default = ListModule;
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _netflixComponent = __webpack_require__(117);
+
+	var _netflixComponent2 = _interopRequireDefault(_netflixComponent);
+
+	var _netflixController = __webpack_require__(111);
+
+	var _netflixController2 = _interopRequireDefault(_netflixController);
+
+	__webpack_require__(121);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ListModule = _angular2.default.module('list', []).component('list', _list2.default).service("ApiService", _api2.default);
+	var NetflixComponent = {
+	  restrict: 'E',
+	  bindings: {},
+	  template: _netflixComponent2.default,
+	  controller: _netflixController2.default,
+	  controllerAs: 'NetflixController'
+	};
 
-	exports.default = ListModule;
+	exports.default = NetflixComponent;
 
 /***/ },
 /* 111 */
@@ -86178,13 +86176,13 @@
 
 	var _netflix2 = _interopRequireDefault(_netflix);
 
-	var _netflix3 = __webpack_require__(61);
+	var _netflix3 = __webpack_require__(110);
 
 	var _netflix4 = _interopRequireDefault(_netflix3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var NetflixModule = _angular2.default.module('netflix', []).component('netflix', _netflix4.default).service("NetflixService", _netflix2.default).controller('NetFlixCtrl', function () {});
+	var NetflixModule = _angular2.default.module('netflix', []).component('netflix', _netflix4.default).service("NetflixService", _netflix2.default).controller('NetflixCtrl', function () {});
 
 	exports.default = NetflixModule;
 
@@ -86225,6 +86223,9 @@
 	      });
 	      return defer.promise;
 	    }
+	  }, {
+	    key: 'deleteItem',
+	    value: function deleteItem(index) {}
 	  }]);
 
 	  return NetflixService;
@@ -86236,13 +86237,13 @@
 /* 114 */
 /***/ function(module, exports) {
 
-	module.exports = "<header></header>\n<div layout=\"row\" layout-xs=\"column\" class=\"main-container\" layout-padding=\"5\">\n  <div flex>\n    <ui-view></ui-view>\n  </div>\n</div>"
+	module.exports = "<header></header>\r\n<div layout=\"row\" layout-xs=\"column\" class=\"main-container\" layout-padding=\"5\">\r\n  <div flex>\r\n    <ui-view></ui-view>\r\n  </div>\r\n</div>"
 
 /***/ },
 /* 115 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-cloak>\r\n  <md-content class=\"md-padding\">\r\n    <md-nav-bar md-selected-nav-item=\"currentNavItem\" nav-bar-aria-label=\"navigation links\">\r\n      <md-nav-item md-nav-click=\"goto('page1')\" name=\"page1\">\r\n        <a ui-sref=\"list()\">View List</a>\r\n      </md-nav-item>\r\n      <md-nav-item md-nav-click=\"goto('page2')\" name=\"page2\">\r\n        <a ui-sref=\"netflix()\">View Netflix</a>\r\n      </md-nav-item>\r\n\r\n    </md-nav-bar>\r\n  </md-content>\r\n</div>"
+	module.exports = "<div ng-cloak>\r\n  <md-content class=\"md-padding\">\r\n    <md-nav-bar md-selected-nav-item=\"currentNavItem\" nav-bar-aria-label=\"navigation links\">\r\n      <a ui-sref=\"list()\">\r\n        <md-nav-item md-nav-click=\"goto('page1')\" name=\"page1\">\r\n          View List\r\n        </md-nav-item>\r\n      </a>\r\n      <a ui-sref=\"netflix()\">\r\n        <md-nav-item md-nav-click=\"goto('page2')\" name=\"page2\">\r\n          View Netflix\r\n        </md-nav-item>\r\n      </a>\r\n    </md-nav-bar>\r\n  </md-content>\r\n</div>"
 
 /***/ },
 /* 116 */
@@ -86254,7 +86255,7 @@
 /* 117 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-cloak style=\"margin: 0 auto;\" layout-align=\"center\">\r\n  <form ng-controller=\"NetFlixCtrl\" layout=\"column\" layout-padding ng-cloak>\r\n    <md-content class=\"md-no-momentum\">\r\n      <md-input-container md-no-float class=\"md-block\">\r\n        <input ng-model=\"movie.actor\" ng-keyup=\"NetflixController.getMovie(movie.actor)\" type=\"text\" placeholder=\"Actor Name\">\r\n      </md-input-container>\r\n    </md-content>\r\n  </form>\r\n</div>\r\n<div ng-cloak>\r\n  <md-content class=\"md-padding\" layout-xs=\"column\" layout=\"row\" layout-align=\"center\">\r\n    <div flex-xs flex-gt-xs=\"100\" layout=\"column\">\r\n      <md-card md-theme-watch ng-repeat=\"movie in NetflixController.movies.value\">\r\n        <md-card-title>\r\n          <md-card-title-text>\r\n            <span class=\"md-headline\">{{movie.show_title}} ({{movie.release_year}})</span>\r\n            <span class=\"md-subhead\">Category: {{movie.category}}</span>\r\n            <span class=\"md-subhead\">Cast: {{movie.show_cast}}</span>\r\n          </md-card-title-text>\r\n          <md-card-title-media>\r\n            <div class=\"md-media-md card-media\">\r\n              <img style=\"max-height: 100%;\" ng-src=\"{{movie.poster}}\" alt=\"Poster Nat Available\">\r\n            </div>\r\n          </md-card-title-media>\r\n        </md-card-title>\r\n        <md-card-actions layout=\"row\" layout-align=\"end center\">\r\n          <md-button ng-click=\"NetflixController.onDelete($index)\">Delete</md-button>\r\n        </md-card-actions>\r\n      </md-card>\r\n    </div>\r\n  </md-content>\r\n</div>"
+	module.exports = "<div ng-cloak style=\"margin: 0 auto;\" layout-align=\"center\">\r\n  <form ng-controller=\"NetflixCtrl\" layout=\"column\" layout-padding ng-cloak>\r\n    <md-content class=\"md-no-momentum\">\r\n      <md-input-container md-no-float class=\"md-block\">\r\n        <input ng-model=\"movie.actor\" ng-keyup=\"NetflixController.getMovie(movie.actor)\" type=\"text\" placeholder=\"Actor Name\">\r\n      </md-input-container>\r\n    </md-content>\r\n  </form>\r\n</div>\r\n<div ng-cloak>\r\n  <md-content class=\"md-padding\" layout-xs=\"column\" layout=\"row\" layout-align=\"center\">\r\n    <div flex-xs flex-gt-xs=\"100\" layout=\"column\">\r\n      <md-card md-theme-watch ng-repeat=\"movie in NetflixController.movies.value\">\r\n        <md-card-title>\r\n          <md-card-title-text>\r\n            <span class=\"md-headline\">{{movie.show_title}} ({{movie.release_year}})</span>\r\n            <span class=\"md-subhead\">Category: {{movie.category}}</span>\r\n            <span class=\"md-subhead\">Cast: {{movie.show_cast}}</span>\r\n          </md-card-title-text>\r\n          <md-card-title-media>\r\n            <div class=\"md-media-md card-media\">\r\n              <img style=\"max-height: 100%;\" ng-src=\"{{movie.poster}}\" alt=\"Poster Nat Available\">\r\n            </div>\r\n          </md-card-title-media>\r\n        </md-card-title>\r\n        <md-card-actions layout=\"row\" layout-align=\"end center\">\r\n          <md-button ng-click=\"NetflixController.onDelete($index)\">Delete</md-button>\r\n        </md-card-actions>\r\n      </md-card>\r\n    </div>\r\n  </md-content>\r\n</div>"
 
 /***/ },
 /* 118 */
@@ -86263,7 +86264,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(99);
+	var content = __webpack_require__(98);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(25)(content, {});
@@ -86289,7 +86290,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(100);
+	var content = __webpack_require__(99);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(25)(content, {});
@@ -86315,7 +86316,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(101);
+	var content = __webpack_require__(100);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(25)(content, {});
@@ -86341,7 +86342,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(102);
+	var content = __webpack_require__(101);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(25)(content, {});
