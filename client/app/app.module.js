@@ -7,7 +7,6 @@ import AppComponent from './app.component';
 import NetflixComponent from './components/netflix/netflix.component';
 import ComponentsModule from './components/components';
 
-
 angular.module('app', [
     ComponentsModule.name,
     uiRouter,
@@ -17,12 +16,13 @@ angular.module('app', [
   .config([
     '$sceDelegateProvider',
     '$stateProvider',
-    '$urlRouterProvider',
     ($sceDelegateProvider, $stateProvider) => {
+
       $sceDelegateProvider
         .resourceUrlWhitelist([
           'self', 'http://netflixroulette.net/**'
         ]);
+
       $stateProvider
         .state('list', {
           url: "/list",
@@ -35,6 +35,7 @@ angular.module('app', [
         .state("otherwise", {
           url: '*path',
           template: '<netflix></netflix>'
-        })
+        });
+
     }
-  ])
+  ]);

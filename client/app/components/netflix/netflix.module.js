@@ -8,6 +8,6 @@ const NetflixModule = angular
   .module('netflix', [])
   .component('netflix', NetflixComponent)
   .service("NetflixService", NetflixService)
-  .controller('NetFlixCtrl', () => {});
+  .controller('NetflixCtrl', () => {});
 
 export default NetflixModule;
