@@ -12,6 +12,8 @@
     "deploy": "node deploy.js"
   },
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.5",
+    "@uirouter/visualizer": "^4.0.0",
     "angular": "^1.6.5",
     "angular-1.5-cli": "^1.6.1",
     "angular-animate": "^1.6.5",
