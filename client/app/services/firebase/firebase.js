@@ -18,6 +18,7 @@ class FirebaseService {
       });
     return defer.promise;
   }
+
 }
 
 export default FirebaseService;
