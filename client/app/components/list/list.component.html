@@ -1,0 +1,14 @@
+<div flex layout="column" md-whiteframe="2">
+  <div class="md-toolbar-tools">
+    <md-button class="md-raised md-cornered" ng-click="ListController.onAddCard()">{{ListController.info.value.title}}</md-button>
+  </div>
+  <md-subheader class="md-no-sticky">{{ListController.info.value.subTitle}}</md-subheader>
+  <md-list-item class="md-3-line" ng-repeat="card in ListController.cards" ng-click="ListController.onDeleteCard($index)">
+    <img ng-src="{{ListController.info.imgUrl}}}" class="md-avatar" alt="{{item.who}}" />
+    <div class="md-list-item-text" layout="column">
+      <h3>{{card.date | date:'medium'}}</h3>
+      <h4>Index: {{$index}}</h4>
+      <p>I'm using AngularJS' date formatter</p>
+    </div>
+  </md-list-item>
+</div>

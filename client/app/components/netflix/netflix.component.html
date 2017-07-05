@@ -1,0 +1,32 @@
+<div ng-cloak style="margin: 0 auto;" layout-align="center">
+  <form ng-controller="NetFlixCtrl" layout="column" layout-padding ng-cloak>
+    <md-content class="md-no-momentum">
+      <md-input-container md-no-float class="md-block">
+        <input ng-model="movie.actor" ng-keyup="NetflixController.getMovie(movie.actor)" type="text" placeholder="Actor Name">
+      </md-input-container>
+    </md-content>
+  </form>
+</div>
+<div ng-cloak>
+  <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+    <div flex-xs flex-gt-xs="100" layout="column">
+      <md-card md-theme-watch ng-repeat="movie in NetflixController.movies.value">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{movie.show_title}} ({{movie.release_year}})</span>
+            <span class="md-subhead">Category: {{movie.category}}</span>
+            <span class="md-subhead">Cast: {{movie.show_cast}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media">
+              <img style="max-height: 100%;" ng-src="{{movie.poster}}" alt="Poster Nat Available">
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="NetflixController.onDelete($index)">Delete</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+</div>
