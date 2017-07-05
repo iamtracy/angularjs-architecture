@@ -1,4 +1,4 @@
-class ApiService {
+class FirebaseService {
 
   constructor($http, $q) {
     'ngInject';
@@ -20,4 +20,4 @@ class ApiService {
   }
 }
 
-export default ApiService;
+export default FirebaseService;

@@ -2,11 +2,11 @@ import angular from 'angular';
 
 import ListComponent from './list.component';
 
-import ApiService from '../../services/api/api';
+import FirebaseService from '../../services/firebase/firebase';
 
 const ListModule = angular
   .module('list', [])
   .component('list', ListComponent)
-  .service("ApiService", ApiService);
+  .service("FirebaseService", FirebaseService);
 
 export default ListModule;

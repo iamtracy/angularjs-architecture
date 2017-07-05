@@ -1,15 +1,15 @@
-import ApiService from '../../services/api/api';
+import FirebaseService from '../../services/firebase/firebase';
 
 class ListController {
 
-  constructor(ApiService) {
+  constructor(FirebaseService) {
     this.info = {};
     this.cards = [];
-    this.ApiService = ApiService;
+    this.FirebaseService = FirebaseService;
   }
 
   $onInit() {
-    this.info = this.ApiService.getData().$$state;
+    this.info = this.FirebaseService.getData().$$state;
   }
 
   onAddCard() {
@@ -22,6 +22,6 @@ class ListController {
 
 }
 
-ListController.$inject = ["ApiService"];
+ListController.$inject = ["FirebaseService"];
 
 export default ListController;

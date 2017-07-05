@@ -19,7 +19,10 @@ angular.module('app', [
     '$stateProvider',
     '$urlRouterProvider',
     ($sceDelegateProvider, $stateProvider) => {
-      $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://netflixroulette.net/**']);
+      $sceDelegateProvider
+        .resourceUrlWhitelist([
+          'self', 'http://netflixroulette.net/**'
+        ]);
       $stateProvider
         .state('list', {
           url: "/list",
