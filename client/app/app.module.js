@@ -4,7 +4,6 @@ import uiRouter from '@uirouter/angularjs';
 import 'angular-material';
 
 import AppComponent from './app.component';
-import NetflixComponent from './components/netflix/netflix.component';
 import ComponentsModule from './components/components';
 
 angular.module('app', [
