@@ -1,12 +1,16 @@
 <div ng-cloak>
   <md-content class="md-padding">
     <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="goto('page1')" name="page1">
-        <a ui-sref="list()">View List</a>
-      </md-nav-item>
-      <md-nav-item md-nav-click="goto('page2')" name="page2">
-        <a ui-sref="netflix()">View Netflix</a>
-      </md-nav-item>
+      <a ui-sref="list()">
+        <md-nav-item md-nav-click="goto('page1')" name="page1">
+          View List
+        </md-nav-item>
+      </a>
+      <a ui-sref="netflix()">
+        <md-nav-item md-nav-click="goto('page2')" name="page2">
+          View Netflix
+        </md-nav-item>
+      </a>
     </md-nav-bar>
   </md-content>
 </div>
