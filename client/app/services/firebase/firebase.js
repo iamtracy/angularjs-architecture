@@ -4,6 +4,7 @@ class FirebaseService {
     'ngInject';
     this.$http = $http;
     this.$q = $q;
+    this.cards = [];
   }
 
   getData() {
@@ -17,6 +18,18 @@ class FirebaseService {
         defer.reject(response.statusText);
       });
     return defer.promise;
+  }
+
+  setItems() {
+    return this.cards;
+  }
+
+  addItem() {
+    return this.cards.push({ date: new Date() });
+  }
+
+  deleteItem(index) {
+    this.cards.splice(index, 1);
   }
 
 }

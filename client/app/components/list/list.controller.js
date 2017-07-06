@@ -3,21 +3,20 @@ import FirebaseService from '../../services/firebase/firebase';
 class ListController {
 
   constructor(FirebaseService) {
-    this.info = {};
-    this.cards = [];
     this.FirebaseService = FirebaseService;
   }
 
   $onInit() {
     this.info = this.FirebaseService.getData().$$state;
+    this.cards = this.FirebaseService.setItems();
   }
 
   onAddCard() {
-    this.cards.push({ date: new Date() });
+    this.FirebaseService.addItem();
   }
 
   onDeleteCard(index) {
-    this.cards.splice(index, 1);
+    this.FirebaseService.deleteItem();
   }
 
 }

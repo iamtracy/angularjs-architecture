@@ -1,7 +1,6 @@
 class NetflixController {
 
   constructor(NetflixService) {
-    this.movies = [];
     this.NetflixService = NetflixService;
   }
 
