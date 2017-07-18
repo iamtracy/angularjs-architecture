@@ -1,5 +1,4 @@
 import angular from 'angular';
-
 import FirebaseService from '../../services/firebase/firebase';
 
 import ListComponent from './list.component';

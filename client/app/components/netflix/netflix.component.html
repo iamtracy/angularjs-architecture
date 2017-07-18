@@ -2,7 +2,7 @@
   <form ng-controller="NetflixCtrl" layout="column" layout-padding ng-cloak>
     <md-content class="md-no-momentum">
       <md-input-container md-no-float class="md-block">
-        <input ng-model="movie.actor" ng-keyup="NetflixController.getMovie(movie.actor)" type="text" placeholder="Actor Name">
+        <input ng-model="movie.actor" ng-keyup="$ctrl.onGetMovie(movie.actor)" type="text" placeholder="Actor Name">
       </md-input-container>
     </md-content>
   </form>
@@ -10,7 +10,7 @@
 <div ng-cloak>
   <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
     <div flex-xs flex-gt-xs="100" layout="column">
-      <md-card md-theme-watch ng-repeat="movie in NetflixController.movies.value">
+      <md-card md-theme-watch ng-repeat="movie in $ctrl.movies.value">
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">{{movie.show_title}} ({{movie.release_year}})</span>
@@ -24,7 +24,7 @@
           </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button ng-click="NetflixController.onDelete($index)">Delete</md-button>
+          <md-button ng-click="$ctrl.onDelete($index)">Delete</md-button>
         </md-card-actions>
       </md-card>
     </div>

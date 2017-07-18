@@ -72,10 +72,10 @@
 
 	  $stateProvider.state('list', {
 	    url: "/list",
-	    template: '<netflix></netflix>'
+	    template: '<list></list>'
 	  }).state('netflix', {
 	    url: '/netflix',
-	    template: '<list></list>'
+	    template: '<netflix></netflix>'
 	  }).state("otherwise", {
 	    url: '*path',
 	    template: '<netflix></netflix>'
@@ -9077,6 +9077,7 @@
 
 	    this.$http = $http;
 	    this.$q = $q;
+	    this.cards = [];
 	  }
 
 	  _createClass(FirebaseService, [{
@@ -9090,6 +9091,21 @@
 	        defer.reject(response.statusText);
 	      });
 	      return defer.promise;
+	    }
+	  }, {
+	    key: 'setItems',
+	    value: function setItems() {
+	      return this.cards;
+	    }
+	  }, {
+	    key: 'addItem',
+	    value: function addItem() {
+	      return this.cards.push({ date: new Date() });
+	    }
+	  }, {
+	    key: 'deleteItem',
+	    value: function deleteItem(index) {
+	      this.cards.splice(index, 1);
 	    }
 	  }]);
 
@@ -85880,6 +85896,10 @@
 
 	var _angular2 = _interopRequireDefault(_angular);
 
+	var _header = __webpack_require__(106);
+
+	var _header2 = _interopRequireDefault(_header);
+
 	var _list = __webpack_require__(109);
 
 	var _list2 = _interopRequireDefault(_list);
@@ -85888,13 +85908,9 @@
 
 	var _netflix2 = _interopRequireDefault(_netflix);
 
-	var _header = __webpack_require__(106);
-
-	var _header2 = _interopRequireDefault(_header);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ComponentsModule = _angular2.default.module('app.components', [_list2.default.name, _netflix2.default.name, _header2.default.name]);
+	var ComponentsModule = _angular2.default.module('app.components', [_header2.default.name, _list2.default.name, _netflix2.default.name]);
 
 	exports.default = ComponentsModule;
 
@@ -85998,8 +86014,7 @@
 	  restrict: 'E',
 	  bindings: {},
 	  template: _listComponent2.default,
-	  controller: _listController2.default,
-	  controllerAs: 'ListController'
+	  controller: _listController2.default
 	};
 
 	exports.default = ListModule;
@@ -86028,8 +86043,6 @@
 	  function ListController(FirebaseService) {
 	    _classCallCheck(this, ListController);
 
-	    this.info = {};
-	    this.cards = [];
 	    this.FirebaseService = FirebaseService;
 	  }
 
@@ -86037,16 +86050,17 @@
 	    key: "$onInit",
 	    value: function $onInit() {
 	      this.info = this.FirebaseService.getData().$$state;
+	      this.cards = this.FirebaseService.setItems();
 	    }
 	  }, {
 	    key: "onAddCard",
 	    value: function onAddCard() {
-	      this.cards.push({ date: new Date() });
+	      this.FirebaseService.addItem();
 	    }
 	  }, {
 	    key: "onDeleteCard",
 	    value: function onDeleteCard(index) {
-	      this.cards.splice(index, 1);
+	      this.FirebaseService.deleteItem();
 	    }
 	  }]);
 
@@ -86111,8 +86125,7 @@
 	  restrict: 'E',
 	  bindings: {},
 	  template: _netflixComponent2.default,
-	  controller: _netflixController2.default,
-	  controllerAs: 'NetflixController'
+	  controller: _netflixController2.default
 	};
 
 	exports.default = NetflixComponent;
@@ -86135,19 +86148,18 @@
 	  function NetflixController(NetflixService) {
 	    _classCallCheck(this, NetflixController);
 
-	    this.movies = [];
 	    this.NetflixService = NetflixService;
 	  }
 
 	  _createClass(NetflixController, [{
-	    key: "getMovie",
-	    value: function getMovie(actor) {
+	    key: "onGetMovie",
+	    value: function onGetMovie(actor) {
 	      this.movies = this.NetflixService.getData(actor).$$state;
 	    }
 	  }, {
 	    key: "onDelete",
 	    value: function onDelete(index) {
-	      this.movies.value.splice(index, 1);
+	      this.NetflixService.deleteItem(index);
 	    }
 	  }]);
 
@@ -86209,14 +86221,18 @@
 
 	    this.$q = $q;
 	    this.$http = $http;
+	    this.movies = [];
 	  }
 
 	  _createClass(NetflixService, [{
 	    key: 'getData',
 	    value: function getData(actor) {
+	      var _this = this;
+
 	      var defer = this.$q.defer();
 	      this.$http.get('http://netflixroulette.net/api/api.php?actor=' + actor).then(function (response) {
 	        var data = response.data;
+	        _this.movies = data;
 	        defer.resolve(data);
 	      }).catch(function (response) {
 	        return defer.reject(response);
@@ -86225,7 +86241,9 @@
 	    }
 	  }, {
 	    key: 'deleteItem',
-	    value: function deleteItem(index) {}
+	    value: function deleteItem(index) {
+	      this.movies.splice(index, 1);
+	    }
 	  }]);
 
 	  return NetflixService;
@@ -86249,13 +86267,13 @@
 /* 116 */
 /***/ function(module, exports) {
 
-	module.exports = "<div flex layout=\"column\" md-whiteframe=\"2\">\r\n  <div class=\"md-toolbar-tools\">\r\n    <md-button class=\"md-raised md-cornered\" ng-click=\"ListController.onAddCard()\">{{ListController.info.value.title}}</md-button>\r\n  </div>\r\n  <md-subheader class=\"md-no-sticky\">{{ListController.info.value.subTitle}}</md-subheader>\r\n  <md-list-item class=\"md-3-line\" ng-repeat=\"card in ListController.cards\" ng-click=\"ListController.onDeleteCard($index)\">\r\n    <img ng-src=\"{{ListController.info.imgUrl}}}\" class=\"md-avatar\" alt=\"{{item.who}}\" />\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n      <h3>{{card.date | date:'medium'}}</h3>\r\n      <h4>Index: {{$index}}</h4>\r\n      <p>I'm using AngularJS' date formatter</p>\r\n    </div>\r\n  </md-list-item>\r\n</div>"
+	module.exports = "<div flex layout=\"column\" md-whiteframe=\"2\">\r\n  <div class=\"md-toolbar-tools\">\r\n    <md-button class=\"md-raised md-cornered\" ng-click=\"$ctrl.onAddCard()\">{{$ctrl.info.value.title}}</md-button>\r\n  </div>\r\n  <md-subheader class=\"md-no-sticky\">{{$ctrl.info.value.subTitle}}</md-subheader>\r\n  <md-list-item class=\"md-3-line\" ng-repeat=\"card in $ctrl.cards\" ng-click=\"$ctrl.onDeleteCard($index)\">\r\n    <img ng-src=\"{{$ctrl.info.imgUrl}}}\" class=\"md-avatar\" alt=\"{{item.who}}\" />\r\n    <div class=\"md-list-item-text\" layout=\"column\">\r\n      <h3>{{card.date | date:'medium'}}</h3>\r\n      <h4>Index: {{$index}}</h4>\r\n      <p>I'm using AngularJS' date formatter</p>\r\n    </div>\r\n  </md-list-item>\r\n</div>"
 
 /***/ },
 /* 117 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-cloak style=\"margin: 0 auto;\" layout-align=\"center\">\r\n  <form ng-controller=\"NetflixCtrl\" layout=\"column\" layout-padding ng-cloak>\r\n    <md-content class=\"md-no-momentum\">\r\n      <md-input-container md-no-float class=\"md-block\">\r\n        <input ng-model=\"movie.actor\" ng-keyup=\"NetflixController.getMovie(movie.actor)\" type=\"text\" placeholder=\"Actor Name\">\r\n      </md-input-container>\r\n    </md-content>\r\n  </form>\r\n</div>\r\n<div ng-cloak>\r\n  <md-content class=\"md-padding\" layout-xs=\"column\" layout=\"row\" layout-align=\"center\">\r\n    <div flex-xs flex-gt-xs=\"100\" layout=\"column\">\r\n      <md-card md-theme-watch ng-repeat=\"movie in NetflixController.movies.value\">\r\n        <md-card-title>\r\n          <md-card-title-text>\r\n            <span class=\"md-headline\">{{movie.show_title}} ({{movie.release_year}})</span>\r\n            <span class=\"md-subhead\">Category: {{movie.category}}</span>\r\n            <span class=\"md-subhead\">Cast: {{movie.show_cast}}</span>\r\n          </md-card-title-text>\r\n          <md-card-title-media>\r\n            <div class=\"md-media-md card-media\">\r\n              <img style=\"max-height: 100%;\" ng-src=\"{{movie.poster}}\" alt=\"Poster Nat Available\">\r\n            </div>\r\n          </md-card-title-media>\r\n        </md-card-title>\r\n        <md-card-actions layout=\"row\" layout-align=\"end center\">\r\n          <md-button ng-click=\"NetflixController.onDelete($index)\">Delete</md-button>\r\n        </md-card-actions>\r\n      </md-card>\r\n    </div>\r\n  </md-content>\r\n</div>"
+	module.exports = "<div ng-cloak style=\"margin: 0 auto;\" layout-align=\"center\">\r\n  <form ng-controller=\"NetflixCtrl\" layout=\"column\" layout-padding ng-cloak>\r\n    <md-content class=\"md-no-momentum\">\r\n      <md-input-container md-no-float class=\"md-block\">\r\n        <input ng-model=\"movie.actor\" ng-keyup=\"$ctrl.onGetMovie(movie.actor)\" type=\"text\" placeholder=\"Actor Name\">\r\n      </md-input-container>\r\n    </md-content>\r\n  </form>\r\n</div>\r\n<div ng-cloak>\r\n  <md-content class=\"md-padding\" layout-xs=\"column\" layout=\"row\" layout-align=\"center\">\r\n    <div flex-xs flex-gt-xs=\"100\" layout=\"column\">\r\n      <md-card md-theme-watch ng-repeat=\"movie in $ctrl.movies.value\">\r\n        <md-card-title>\r\n          <md-card-title-text>\r\n            <span class=\"md-headline\">{{movie.show_title}} ({{movie.release_year}})</span>\r\n            <span class=\"md-subhead\">Category: {{movie.category}}</span>\r\n            <span class=\"md-subhead\">Cast: {{movie.show_cast}}</span>\r\n          </md-card-title-text>\r\n          <md-card-title-media>\r\n            <div class=\"md-media-md card-media\">\r\n              <img style=\"max-height: 100%;\" ng-src=\"{{movie.poster}}\" alt=\"Poster Nat Available\">\r\n            </div>\r\n          </md-card-title-media>\r\n        </md-card-title>\r\n        <md-card-actions layout=\"row\" layout-align=\"end center\">\r\n          <md-button ng-click=\"$ctrl.onDelete($index)\">Delete</md-button>\r\n        </md-card-actions>\r\n      </md-card>\r\n    </div>\r\n  </md-content>\r\n</div>"
 
 /***/ },
 /* 118 */

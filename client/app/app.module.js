@@ -25,11 +25,11 @@ angular.module('app', [
       $stateProvider
         .state('list', {
           url: "/list",
-          template: '<netflix></netflix>'
+          template: '<list></list>'
         })
         .state('netflix', {
           url: '/netflix',
-          template: '<list></list>'
+          template: '<netflix></netflix>'
         })
         .state("otherwise", {
           url: '*path',

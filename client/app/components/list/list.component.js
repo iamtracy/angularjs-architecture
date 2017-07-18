@@ -6,8 +6,7 @@ let ListModule = {
   restrict: 'E',
   bindings: {},
   template,
-  controller,
-  controllerAs: 'ListController'
+  controller
 };
 
 export default ListModule;

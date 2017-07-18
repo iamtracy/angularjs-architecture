@@ -4,7 +4,7 @@ class NetflixController {
     this.NetflixService = NetflixService;
   }
 
-  getMovie(actor) {
+  onGetMovie(actor) {
     this.movies = this.NetflixService.getData(actor).$$state
   }
 

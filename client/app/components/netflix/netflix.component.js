@@ -6,8 +6,7 @@ let NetflixComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller,
-  controllerAs: 'NetflixController'
+  controller
 };
 
 export default NetflixComponent;
